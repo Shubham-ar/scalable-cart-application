@@ -25,9 +25,21 @@ function App() {
 
   }
 
+  const buyNow = () => {
+    setCartItem([])
+
+    toast("Purchase Complete", {
+      type: "success"
+    })
+  }
+
+  const removeItem = item => {
+    setCartItem(cartItem.filter(singleItem => singleItem.id !== item.id))
+  }
+
   return (
     <div className="App">
-
+      <h2>HelloWorld</h2>
     </div>
   );
 }
