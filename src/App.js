@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'react-toastify/dist/ReactToastify.css'
 import './App.css';
 import { toast } from 'react-toastify';
+import BuyPage from './Components/BuyPage';
 
 function App() {
 
@@ -39,7 +40,7 @@ function App() {
 
   return (
     <div className="App">
-      <h2>HelloWorld</h2>
+      <BuyPage addInCart={addInCart} />
     </div>
   );
 }
