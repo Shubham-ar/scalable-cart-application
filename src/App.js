@@ -29,7 +29,7 @@ function App() {
   const buyNow = () => {
     setCartItem([])
 
-    toast("Purchase Complete", {
+    return toast("Purchase Complete", {
       type: "success"
     })
   }

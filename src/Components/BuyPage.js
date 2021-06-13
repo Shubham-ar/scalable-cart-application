@@ -18,9 +18,10 @@ const BuyPage = ({ addInCart }) => {
 
     const fetchPhotos = async () => {
         const { data } = await axios.get(url, {
-            header: {
+            headers: {
                 Authorization: apikey
             }
+
         })
 
 
@@ -33,7 +34,9 @@ const BuyPage = ({ addInCart }) => {
             productName: random.word(),
             productPrice: commerce.price(),
             id: datatype.uuid()
+            // id: random.uuid()
         }))
+
         setProduct(allProducts)
     }
 
@@ -44,9 +47,11 @@ const BuyPage = ({ addInCart }) => {
         <Container fluid>
             <h1 className="text-success text-center">Buy Page</h1>
 
-            <Row>{product.map(product => (
-                <span key="product.id">{product.productName}</span>
-            ))}</Row>
+            <Row className="border1pxblack">
+                {product.map(product => (
+                    <span key={product.id}>{product.productName}</span>
+                ))}
+            </Row>
         </Container>
     );
 }
