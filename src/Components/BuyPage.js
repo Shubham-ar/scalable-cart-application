@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { random, commerce, datatype } from 'faker'
 import { Container, Row, Col } from 'reactstrap'
 import axios from 'axios'
-
+import CartItem from './CartItem'
 const apikey = "563492ad6f9170000100000119e5de6ec2434fad852d052a59fe50c0"
 const url = "https://api.pexels.com/v1/search?query=laptop&per_page=6&page=1"
 // const localUrl="" if youre not using the actual API and using some json server
@@ -47,10 +47,19 @@ const BuyPage = ({ addInCart }) => {
         <Container fluid>
             <h1 className="text-success text-center">Buy Page</h1>
 
-            <Row className="border1pxblack">
+            {/* <Row className="border1pxblack">
                 {product.map(product => (
                     <span key={product.id}>{product.productName}</span>
                 ))}
+            </Row> */}
+
+            <Row>
+                {product.map(product => (
+                    <Col md={4} key={product.id}>
+                        <CartItem product={product} addInCart={addInCart} />
+                    </Col>
+                ))}
+
             </Row>
         </Container>
     );

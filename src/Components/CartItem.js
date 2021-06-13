@@ -1,5 +1,12 @@
 import React from 'react'
-import { Card, CardImg, CardBody, CardTitle, CardText, Button } from 'reactstrap'
+import {
+    Card,
+    CardImg,
+    CardBody,
+    CardTitle,
+    CardText,
+    Button
+} from 'reactstrap'
 
 
 const CartItem = ({ product, addInCart }) => {
@@ -11,9 +18,21 @@ const CartItem = ({ product, addInCart }) => {
                 height="250"
                 width="100%"
                 src={product.smallImage}
-
-
             />
+            <CardBody className="text-center">
+                <CardTitle>
+                    {product.productName}
+                </CardTitle>
+                <CardText className="secondary">
+                    Price: {product.productPrice} INR
+                </CardText>
+                <Button
+                    color="success"
+                    onClick={() => { addInCart(product) }}
+                >
+                    Buy Now!
+                </Button>
+            </CardBody>
 
         </Card>
     )
