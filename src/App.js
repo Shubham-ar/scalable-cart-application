@@ -10,7 +10,7 @@ function App() {
   const [cartItem, setCartItem] = useState([]);
 
 
-  const addCart = item => {
+  const addInCart = item => {
 
     const isAlreadyAdded = cartItem.findIndex(function (array) {
       return array.id === item.id
